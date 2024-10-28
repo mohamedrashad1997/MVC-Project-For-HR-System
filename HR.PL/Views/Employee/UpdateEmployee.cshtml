@@ -1,0 +1,205 @@
+﻿@model Employee
+@{
+	ViewData["Title"] = "Update Employee";
+}
+
+<div class="main-panel">
+	<div class="main-content">
+		<div class="content-wrapper">
+			<div class="container-fluid">
+				<section id="horizontal-form-layouts">
+					<div class="row">
+						<div class="col-sm-12">
+							<h2 class="content-header">Add Employees Form</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title-wrap bar-success">
+										<h4 class="card-title" id="horz-layout-basic">Employee Information</h4>
+									</div>
+									<p class="mb-0">This is the basic horizontal form with labels on left and cost estimation form is the default position.</p>
+								</div>
+								<div class="card-body">
+									<div class="px-3">
+										<form asp-controller="Employee" asp-action="UpdateEmployee" method="post">
+											<input type="hidden" asp-for="EmployeeId" />
+
+											<div class="form-body">
+												<h4 class="form-section">
+													<i class="icon-user"></i> Personal Details
+												</h4>
+
+												<div class="form-group row">
+													<label asp-for="@Model.Name" class="col-md-3 label-control"></label>
+													<div class="col-md-9">
+														<input asp-for="@Model.Name" class="form-control">
+													</div>
+													<span asp-validation-for="@Model.Name" class="text-danger"></span>
+												</div>
+
+												<div class="form-group row">
+													<label asp-for="@Model.Address" class="col-md-3 label-control"></label>
+													<div class="col-md-9">
+														<input asp-for="@Model.Address" class="form-control">
+													</div>
+													<span asp-validation-for="@Model.Address" class="text-danger"></span>
+												</div>
+
+												<div class="form-group row">
+													<label asp-for="@Model.PhoneNumber" class="col-md-3 label-control"></label>
+													<div class="col-md-9">
+														<input asp-for="@Model.PhoneNumber" class="form-control">
+													</div>
+													<span asp-validation-for="@Model.PhoneNumber" class="text-danger"></span>
+												</div>
+
+												<div class="form-group row">
+													<label asp-for="@Model.Email" class="col-md-3 label-control"></label>
+													<div class="col-md-9">
+														<input asp-for="@Model.Email" class="form-control">
+													</div>
+													<span asp-validation-for="@Model.Email" class="text-danger"></span>
+												</div>
+
+												<h4 class="form-section">
+													<i class="icon-book-open"></i>Other Details
+												</h4>
+												<div class="form-group row">
+													<label asp-for="@Model.DateOfBirth" class="col-md-3 label-control"></label>
+													<div class="col-md-9">
+														<div class="position-relative has-icon-left">
+															<input asp-for="@Model.DateOfBirth" class="form-control" type="date">
+															<div class="form-control-position">
+																<i class="ft-message-square"></i>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="form-group row">
+												<label asp-for="@Model.Gender" class="col-md-3 label-control"></label>
+												<div class="col-md-9">
+													<select class="form-control" asp-for="Gender">
+														<option value="@null" selected="" disabled="">------- Gender ------</option>
+														<option value="Male">Male</option>
+														<option value="Female">Female</option>
+														<i class="fas fa-cog"></i>
+													</select>
+												</div>
+												<span asp-validation-for="@Model.Gender" class="text-danger"></span>
+											</div>
+
+											<div class="form-group row">
+												<label asp-for="@Model.HiringDate" class="col-md-3 label-control"></label>
+												<div class="col-md-9">
+													<div class="position-relative has-icon-left">
+														<input asp-for="@Model.HiringDate" class="form-control" type="date">
+														<div class="form-control-position">
+															<i class="ft-message-square"></i>
+														</div>
+													</div>
+												</div>
+											</div>
+
+
+											<div class=" row">
+												<div class="col-md-12">
+													<div class=" row form-group">
+														<label asp-for="@Model.CheckinTime" class="col-md-3 label-control"></label>
+														<div class="position-relative has-icon-left col-lg-9">
+															<input asp-for="@Model.CheckinTime" class="form-control" type="time">
+															<div class="form-control-position">
+																<i class="ft-clock"></i>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-md-12">
+													<div class=" row form-group">
+														<label asp-for="@Model.CheckoutTime" class="col-md-3 label-control"></label>
+														<div class="position-relative has-icon-left col-lg-9">
+															<input asp-for="@Model.CheckoutTime" class="form-control" type="time">
+															<div class="form-control-position">
+																<i class="ft-clock"></i>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="form-group row">
+												<label asp-for="@Model.Salary" class="col-md-3 label-control"></label>
+												<div class="col-md-9">
+													<input asp-for="@Model.Salary" class="form-control">
+												</div>
+												<span asp-validation-for="@Model.Salary" class="text-danger"></span>
+											</div>
+
+											<div class="form-group row">
+												<label asp-for="@Model.NationalID" class="col-md-3 label-control"></label>
+												<div class="col-md-9">
+													<input asp-for="@Model.NationalID" class="form-control">
+												</div>
+												<span asp-validation-for="@Model.NationalID" class="text-danger"></span>
+											</div>
+
+											<div class="form-group row">
+												<label asp-for="@Model.Nationality" class="col-md-3 label-control"></label>
+												<div class="col-md-9">
+													<input asp-for="@Model.Nationality" class="form-control">
+												</div>
+												<span asp-validation-for="@Model.Nationality" class="text-danger"></span>
+											</div>
+
+
+											@*<div class="form-group row">
+											<label class="col-md-3 label-control">Select File: </label>
+											<div class="col-md-9">
+											<label id="projectinput8" class="file center-block">
+											<input type="file" id="file">
+											<span class="file-custom"></span>
+											:
+											</label>
+											</div>
+											</div>
+
+											<div class="form-group row">
+											<label class="col-md-3 label-control" for="projectinput9">Notes: </label>
+											<div class="col-md-9">
+											<textarea id="projectinput9" rows="5" class="form-control" name="comment"></textarea>
+											</div>
+											</div>*@
+
+
+											<div class="form-actions">
+												<input type="submit" value="Update" class="btn btn-primary" />
+
+												<a asp-action="EmployeeInformation" class="btn btn-danger mr-1"><i class="icon-trash"></i> Cancel</a>
+
+											</div>
+										</form>
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+
+
+		</div>
+	</div>
+</div>
+
+<footer class="footer footer-static footer-light">
+	<p class="clearfix text-muted text-center px-2"><span>Copyright  © 2021 <a href="#" id="pixinventLink" target="_blank" class="text-bold-800 primary darken-2">Pioneer solutions </a>, All rights reserved. </span></p>
+</footer>
+
